@@ -2,17 +2,19 @@ import Pergunta from './Pergunta'
 import React from 'react'
 export default function Deck({setTexto,setGabarito,gabarito,setFim}){
     const deck=[
-        {pergunta: 'quem sou eu',resposta:'felipe'},
-        {pergunta: 'quantos anos',resposta:'24'},
-        {pergunta: 'onde moro',resposta:'rio de janeiro'}
+        {pergunta: 'Quem foi o primeiro campeão da copa?',resposta:'Uruguai'},
+        {pergunta: 'Quem foi o último campeão da copa?',resposta:'França'},
+        {pergunta: 'Quem foi campeão da copa mais vezes?',resposta:'Brasil'}
     ]
     const [respostas,setRespostas]=React.useState(0)
     const [erradas,setErradas]=React.useState(false)
-    function encerrar(){if(respostas===2){
-        let frase
-        if(erradas){ frase='putz'}else{frase= 'parabens'}
-        setFim(frase)
-    }}
+    const [jogoFinalizado,setFinalDoJogo]=React.useState(false)
+    if(jogoFinalizado){
+        setTexto(<p>{respostas}/{deck.length} CONCLUÍDOS</p>)
+        if(respostas===deck.length){
+        setFim(erradas ? 'putz' : 'parabens')
+        }setFinalDoJogo(false)
+    }
     
     return(
         <ul>
@@ -24,12 +26,10 @@ export default function Deck({setTexto,setGabarito,gabarito,setFim}){
                     resposta={objeto.resposta} 
                     setGabarito={setGabarito} 
                     gabarito={gabarito} 
-                    qtdDeck={deck.length}
-                    setTexto={setTexto}
                     respostas={respostas}
                     setRespostas={setRespostas}
                     setErradas={()=>setErradas(true)}
-                    encerrar={encerrar}
+                    setFinalDoJogo={setFinalDoJogo}
                 />
             )}
         </ul>
