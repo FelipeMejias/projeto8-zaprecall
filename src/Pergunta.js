@@ -13,6 +13,7 @@ export default function Pergunta({numero,questao,resposta,setGabarito,gabarito,r
             case "bom": setCorPergunta('bomCor');setGabarito([...gabarito,icone]);setIcone(icone);break;
             case "medio": setCorPergunta('medioCor');setGabarito([...gabarito,icone]);setIcone(icone);break;
             case "ruim": setCorPergunta('ruimCor');setGabarito([...gabarito,icone]);setIcone(icone);setErradas();break;
+            default:break;
         }
         setFinalDoJogo(true)
     }

@@ -3,7 +3,7 @@ import Deck from './Deck'
 import Rodape from './Rodape'
 import React from 'react'
 export default function Tela2(){
-    const [texto,setTexto]=React.useState(<p>0/3 CONCLUÍDOS</p>)
+    const [texto,setTexto]=React.useState(<p>0/8 CONCLUÍDOS</p>)
     const [gabarito,setGabarito]=React.useState([])
     const [fim,setFim]=React.useState('')
     

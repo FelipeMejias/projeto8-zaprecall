@@ -6,7 +6,7 @@ body{font-family: 'Recursive', sans-serif;}
     justify-content: space-around;
 }
 main{
-    width: 100vw;height: 87vh;
+    width: 100vw;height: 100%;margin-bottom: 13vh;
     background-color: #FB6B6B;
 }
 footer{
@@ -92,5 +92,13 @@ footer div{width: 100%;display:flex;justify-content: center;align-items: center;
 footer img{width: 4vh;margin-right: 1vh;}
 
 
+
+select{height: 7vh;font-size: 3vh;}
+
 .bloqueia{pointer-events: none}
 .some{display:none}
+
+@media(min-width:700px){
+    .pergunta{width:600px}
+    .card{width:600px}
+}
